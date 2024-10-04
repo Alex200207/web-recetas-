@@ -20,7 +20,7 @@ const Cards: React.FC<RecetasCardProps> = ({ receta, getNombreCategoria }) => {
                 
 
                 <div className="mt-auto flex justify-between items-center">
-                    <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+                    <button className="bg-lime-500 text-gray-950 px-4 py-2 rounded hover:bg-green-600">
                         Ver receta
                     </button>
 
