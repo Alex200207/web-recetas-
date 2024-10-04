@@ -1,12 +1,10 @@
 // src/pages/Page.tsx
 import React from "react";
 import RecipeCard from "../components/Cards";
-import { RecetasTypeProps } from "../types";
+import {  RecetasTypeProps } from "../types";
 
 
-
-
-const Page: React.FC<RecetasTypeProps> = ({recetas}) => {
+const Page: React.FC<RecetasTypeProps > = ({recetas, getNombreCategoria}) => {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
       <header className="py-6 px-4 bg-gray-800 flex justify-between items-center">
@@ -24,6 +22,7 @@ const Page: React.FC<RecetasTypeProps> = ({recetas}) => {
           {recetas.map((recetas) => (
             <RecipeCard
             key={recetas.id}
+            getNombreCategoria={getNombreCategoria}
             receta={recetas}
 
             />
