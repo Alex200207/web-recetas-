@@ -18,7 +18,7 @@ const Page: React.FC<RecetasTypeProps > = ({recetas, getNombreCategoria}) => {
         </nav>
       </header>
       <main className="px-4 py-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-2 mr-24 ml-24">
           {recetas.map((recetas) => (
             <RecipeCard
             key={recetas.id}
