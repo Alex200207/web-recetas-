@@ -16,7 +16,7 @@ const Page: React.FC<RecetasTypeProps> = ({ recetas,getNombresCategoria}) => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      <header className="py-6 px-4 bg-gray-950 flex justify-between items-center">
+      <header className="py-4 px-4 bg-gray-950 flex justify-between items-center">
         <div className="flex items-center">
           <h1 className="text-2xl font-bold">
             {/*no supe que hacer */}
