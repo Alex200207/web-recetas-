@@ -15,9 +15,9 @@ const Page: React.FC<RecetasTypeProps> = ({ recetas,getNombresCategoria}) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white">
+    <div className="min-h-screen bg-gray-900 text-white px-4">
       <header className="py-4 px-4 bg-gray-950 flex justify-between items-center">
-        <div className="flex items-center">
+        <div className="flex items-center ">
           <h1 className="text-2xl font-bold">
             {/*no supe que hacer */}
             <span className="text-slate-50">R</span>
