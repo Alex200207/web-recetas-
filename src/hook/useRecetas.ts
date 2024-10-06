@@ -1,14 +1,16 @@
 import { useEffect, useState } from "react";
 import { API_URL } from "../constant/constant";
-import { RecetasType, CategoriasType } from "../types";
+import { RecetasType, CategoriasType, RecetasCategoriasType } from "../types";
 
 const useRecetas = () => {
   const [recetas, setRecetas] = useState<RecetasType[]>([]);
-  const [categorias, setCategoria] = useState<CategoriasType[]>([]);
+  const [categorias, setCategorias] = useState<CategoriasType[]>([]);
+  const [recetasCategorias, setRecetasCategorias] = useState<RecetasCategoriasType[]>([]);
 
   useEffect(() => {
     obtenerRecetas();
-    obtenerCategoria();
+    obtenerCategorias();
+    obtenerRecetasCategorias();
   }, []);
 
   const obtenerRecetas = async () => {
@@ -21,25 +23,42 @@ const useRecetas = () => {
     }
   };
 
-  const obtenerCategoria = async () => {
+  const obtenerCategorias = async () => {
     try {
       const res = await fetch(`${API_URL}/categorias`);
       const data = await res.json();
-      setCategoria(data);
+      setCategorias(data);
     } catch (error) {
-      console.error("Hubo un error al obtener las categorias", error);
+      console.error(error);
     }
   };
 
-  const getNombreCategoria = (idCategoria: number): string => {
-    const categoria = categorias.find((cat) => cat.id === idCategoria);
-    return categoria?.nombre || "Sin categoría";
+  const obtenerRecetasCategorias = async () => {
+    try {
+      const res = await fetch(`${API_URL}/recetas_categorias`);
+      const data = await res.json();
+      setRecetasCategorias(data);
+      console.log(data)
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const getNombresCategorias = (recetaId: number): string[] => {
+    const categoriasIds = recetasCategorias
+      .filter((rel) => rel.recetas_id === recetaId)
+      .map((rel) => rel.categorias_id);
+
+    return categoriasIds.map((idCategoria) => {
+      const categoria = categorias.find((cat) => cat.id === idCategoria);
+      return categoria?.nombre || "Sin categoría";
+    });
   };
 
   return {
     recetas,
     categorias,
-    getNombreCategoria,
+    getNombresCategorias,
   };
 };
 

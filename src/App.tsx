@@ -4,7 +4,7 @@ import useRecetas from "./hook/useRecetas"
 
 
 const App = () =>  {
-const { recetas, categorias ,getNombreCategoria } = useRecetas()
+const { recetas, categorias, getNombresCategorias } = useRecetas()
 
 
 
@@ -12,10 +12,11 @@ const { recetas, categorias ,getNombreCategoria } = useRecetas()
   return (
     <>
     <Page
-
     recetas={recetas}
-    getNombreCategoria={getNombreCategoria}
+    getNombresCategoria={getNombresCategorias}
     categorias={categorias}
+    
+  
     />
     </>
   )

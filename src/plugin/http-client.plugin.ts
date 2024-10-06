@@ -1,19 +1,19 @@
-import axios from "axios";
-import { RecetasType } from "../types";
+
 
 const httpClientplugin = {
-    get: async(url: string): Promise<RecetasType[]> => {
-        try{
-            const response = await axios.get(url);
-            return response.data;
-        }
-        catch(error){
-            console.error('error en la solicitud GET:',error)
-            throw new Error('No se pudieron obtener los datos');
-        }
+  get: async (url: string) => {
+    try{
+        const peticion = await fetch(url)
+        const res = await peticion.text
+        return res
     }
-}
+    catch(err){
+        console.error(err)
+    }
 
-export{
-    httpClientplugin as http
-}
+    }
+  }
+
+export {
+  httpClientplugin as http
+};
