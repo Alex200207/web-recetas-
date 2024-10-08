@@ -21,8 +21,8 @@ const Page: React.FC<RecetasTypeProps> = ({ recetas, getNombresCategoria }) => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white px-2 md:px-4">
-      <header className="py-4 px-0 md:px-4 bg-gray-950 flex justify-between items-center">
+    <>
+    <header className="py-4 px-0 md:px-4 bg-gray-950 flex justify-between items-center">
         <div className="flex items-center">
           <h1 className="text-2xl font-bold">
             <span className="text-slate-50">R</span>
@@ -197,8 +197,10 @@ const Page: React.FC<RecetasTypeProps> = ({ recetas, getNombresCategoria }) => {
           </div>
         </div>
       </header>
+    <div className="min-h-screen bg-gray-900 text-white px-2 md:px-4">
+      
       <main className="px-0 py-6 md:px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-2 mx-0 md:mx-24">
+        <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-4 gap-2 mx-0 md:mx-24 ">
           {recetas.map((receta) => (
             <RecipeCard
               key={receta.id}
@@ -209,6 +211,7 @@ const Page: React.FC<RecetasTypeProps> = ({ recetas, getNombresCategoria }) => {
         </div>
       </main>
     </div>
+    </>
   );
 };
 
