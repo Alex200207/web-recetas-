@@ -22,9 +22,9 @@ const Page: React.FC<RecetasTypeProps> = ({ recetas, getNombresCategoria }) => {
 
   return (
     <>
-    <header className="py-4 px-0 md:px-4 bg-gray-950 flex justify-between items-center">
+    <header className="py-4 px-0 md:px-4  bg-gray-950 flex justify-between items-center">
         <div className="flex items-center">
-          <h1 className="text-2xl font-bold">
+          <h1 className="text-2xl font-bold mx-4">
             <span className="text-slate-50">R</span>
             <span className="text-slate-50">e</span>
             <span className="text-slate-50">c</span>
@@ -43,7 +43,7 @@ const Page: React.FC<RecetasTypeProps> = ({ recetas, getNombresCategoria }) => {
             <img
               src="https://i.pinimg.com/736x/3e/f9/5e/3ef95eb2be325c976ac5e33d3efb1224.jpg"
               alt="User Avatar"
-              className="w-10 h-10 rounded-full"
+              className="w-10 h-10 rounded-full mx-5"
             />
           </button>
 
